@@ -65,6 +65,14 @@ public class NBody{
 			StdDraw.pause(20);
 			t += dt;	
         }
+        StdOut.printf("%d\n", allp.length);
+		StdOut.printf("%.2e\n", radius);
+		for (int i = 0; i < allp.length; i++) {
+    		StdOut.printf("%11.4e %11.4e %11.4e %11.4e %11.4e %12s\n",
+                  allp[i].xxPos, allp[i].yyPos, allp[i].xxVel,
+                  allp[i].yyVel, allp[i].mass, allp[i].imgFileName);   
+}
+
 
 	}
 
