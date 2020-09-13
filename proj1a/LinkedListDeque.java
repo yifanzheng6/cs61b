@@ -181,10 +181,10 @@ public class LinkedListDeque<T> {
         }
     }
 
-    /** public static void main (String[] args){
+    public static void main (String[] args){
         LinkedListDeque<Integer> L = new LinkedListDeque();
         L.addLast(2);
         L.addLast(5);
-        System.out.println(L.size()); */
+        System.out.println(L.size());
     }
 }
