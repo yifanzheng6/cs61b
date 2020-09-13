@@ -7,7 +7,7 @@ public class LinkedListDeque<T> {
     /**
      * TNode: with prev, item, next.
      * */
-    public class TNode {
+    private class TNode {
         /** prev, next nodes of a TNode. */
         protected TNode prev, next;
         /** item is a TNode value. */
@@ -38,7 +38,7 @@ public class LinkedListDeque<T> {
     /**
      * a Deque with only one item.
      * @param x first item in list.
-     */
+
 
     public LinkedListDeque(T x) {
         xnode = new TNode(null, x, null);
@@ -46,7 +46,7 @@ public class LinkedListDeque<T> {
         xnode.next = xnode;
         sentinel.next = xnode;
         size += 1;
-    }
+    } */
 
     /**
      * @param x add x to the front of list
@@ -82,11 +82,17 @@ public class LinkedListDeque<T> {
     /** @param x adds x to the end of the list. */
     public void addLast(T x) {
         xnode = new TNode(null, x, null);
-        xnode.next = sentinel.next;
-        xnode.prev = sentinel.next.prev;
-        sentinel.next.prev.next = xnode;
-        sentinel.next.prev = xnode;
-        xnode = null;
+        if (size == 0) {
+            sentinel.next = xnode;
+            xnode.next = xnode;
+            xnode.prev = xnode;
+        } else {
+            xnode.next = sentinel.next;
+            xnode.prev = sentinel.next.prev;
+            sentinel.next.prev.next = xnode;
+            sentinel.next.prev = xnode;
+            xnode = null;
+        }
         size += 1;
     }
 
@@ -173,5 +179,12 @@ public class LinkedListDeque<T> {
             temp.sentinel.next = this.sentinel.next.next;
             return temp.getRecursive(index - 1);
         }
+    }
+
+    /** public static void main (String[] args){
+        LinkedListDeque<Integer> L = new LinkedListDeque();
+        L.addLast(2);
+        L.addLast(5);
+        System.out.println(L.size()); */
     }
 }
