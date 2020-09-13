@@ -32,7 +32,7 @@ public class ArrayDequeTest {
         A.addLast("a");
         A.removeFirst();
         assertTrue(A.isEmpty());
-        A.addFirst("b");
+        A.addLast("b");
         A.removeLast();
         assertTrue(A.isEmpty());
     }

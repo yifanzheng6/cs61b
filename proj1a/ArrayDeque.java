@@ -66,6 +66,9 @@ public class ArrayDeque<T> {
      * @return the first item
      */
     public T removeFirst() {
+        if (size == 0) {
+            return null;
+        }
         size -= 1;
         T returnItem;
         if (nextFirst == items.length - 1) {
@@ -87,6 +90,9 @@ public class ArrayDeque<T> {
      * @return the last item.
      */
     public T removeLast() {
+        if (size == 0) {
+            return null;
+        }
         size -= 1;
         T returnItem;
         if (nextLast == 0) {
