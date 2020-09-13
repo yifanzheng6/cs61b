@@ -175,16 +175,20 @@ public class LinkedListDeque<T> {
         if (index == 0) {
             return sentinel.next.item;
         } else {
-            LinkedListDeque<T> temp = this;
+            LinkedListDeque<T> temp = new LinkedListDeque<>();
             temp.sentinel.next = this.sentinel.next.next;
             return temp.getRecursive(index - 1);
         }
     }
 
-    public static void main (String[] args){
+    /** public static void main (String[] args){
         LinkedListDeque<Integer> L = new LinkedListDeque();
-        L.addLast(2);
-        L.addLast(5);
-        System.out.println(L.size());
-    }
+        int i = 0;
+        int temp = 0;
+        while (i<10) {
+            L.addFirst(i*11);
+            temp = L.getRecursive(i);
+            i += 1;
+        }
+    } */
 }

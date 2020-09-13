@@ -2,7 +2,7 @@
  * Performs some basic linked list tests.
  */
 
-import static org.junit.Assert. *;
+import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class LinkedListDequeTest {
@@ -94,7 +94,7 @@ public class LinkedListDequeTest {
 	/** my own tests based on gradescope errors. */
     @Test
 	/** 1. addLast. */
-	public void test_addLast() {
+	public void addLastTest() {
 		LinkedListDeque<Integer> L = new LinkedListDeque();
 		L.addLast(2);
 		L.addLast(5);
