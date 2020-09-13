@@ -79,7 +79,7 @@ public class ArrayDeque<T> {
             nextFirst += 1;
         }
         double f = (double) size / items.length;
-        if (size > 16 && f < 0.25) {
+        if (items.length > 16 && f <= 0.25) {
             shrink();
         }
         return returnItem;
@@ -103,7 +103,7 @@ public class ArrayDeque<T> {
             nextLast -= 1;
         }
         double f = (double) size / items.length;
-        if (size > 16 && f < 0.25) {
+        if (items.length > 16 && f <= 0.25) {
             shrink();
         }
         return returnItem;
@@ -155,6 +155,7 @@ public class ArrayDeque<T> {
                     items.length - nextFirst - 1);
             nextFirst = size + nextLast - 1;
         }
+        items = newitems;
     }
 
     /** Print the items in the deque from first to last. */
