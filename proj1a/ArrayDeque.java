@@ -76,7 +76,7 @@ public class ArrayDeque<T> {
             nextFirst += 1;
         }
         double f = (double) size / items.length;
-        if (f < 0.25) {
+        if (size > 16 && f < 0.25) {
             shrink();
         }
         return returnItem;
@@ -97,7 +97,7 @@ public class ArrayDeque<T> {
             nextLast -= 1;
         }
         double f = (double) size / items.length;
-        if (f < 0.25) {
+        if (size > 16 && f < 0.25) {
             shrink();
         }
         return returnItem;

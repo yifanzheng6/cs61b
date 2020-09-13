@@ -1,35 +1,40 @@
+/** ArrayDequeTest for proj1 cs61b.
+ * @author Yifan
+ * 9/13/2020
+ **/
+
 import jh61b.grader.GradedTest;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
 public class ArrayDequeTest {
-    /**
-     * test addFirst & addLast
-     */
 
+    /** create an empty deque and test isEmpty. */
+    @Test
+    public void EmptyTest() {
+        ArrayDeque<String> A = new ArrayDeque<String>();
+        assertTrue(A.isEmpty());
+    }
 
-    /**
-     * test resize and shrink
-     */
+    /** addFirst and removeFirst test. */
+    @Test
+    public void FirstTest() {
+        ArrayDeque<String> A = new ArrayDeque<String>();
+        A.addFirst("middle");
+        A.removeFirst();
+        assertTrue(A.isEmpty());
+    }
 
-    /**
-     * test empty
-     */
-
-
-    /** test.
-     public static void main(String[] args) {
-     ArrayDeque<String> A = new ArrayDeque<>();
-     A.addFirst("a");
-     A.addLast("b");
-     A.addLast("c");
-     A.addLast("d");
-     A.addFirst("a0");
-     A.addFirst("a1");
-     A.addFirst("a2");
-     A.addFirst("a3");
-     A.resize(10);
-     A.addFirst("begin");
-     A.printDeque();
-     }*/
-
+    /** addLast and removeLast test. */
+    @Test
+    public void LastTest() {
+        ArrayDeque<String> A = new ArrayDeque<String>();
+        A.addLast("a");
+        A.removeFirst();
+        assertTrue(A.isEmpty());
+        A.addFirst("b");
+        A.removeLast();
+        assertTrue(A.isEmpty());
+    }
 
 }
